@@ -4,15 +4,7 @@ node {
     }
 
      stage('checkout') {
-        checkout([
-            $class: 'GitSCM',
-            branches: scm.branches,
-            extensions: scm.extensions +
-                                            [[$class: 'CleanBeforeCheckout'],
-                                            [$class: 'CheckoutOption', timeout: 60],
-                                            [$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false, timeout: 60]],
-            userRemoteConfigs: scm.userRemoteConfigs
-         ])
+        checkout scm
      }
 
     stage('Start testing environment') {
