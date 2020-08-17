@@ -1,8 +1,4 @@
 node {
-    stage('clean') {
-         cleanWs()
-    }
-
     stage('Start testing environment') {
         echo "Workspace is : ${env.WORKSPACE}"
         sh 'docker-compose up -d'
