@@ -13,6 +13,7 @@ node {
     }
 
     stage("run test") {
+        sh 'java --version'
         bzt "load_test.jmx"
     }
 
