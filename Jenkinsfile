@@ -13,6 +13,7 @@ node {
     }
 
     stage("run test") {
+        echo "PATH is : ${env.PATH}"
         sh 'java --version'
         bzt "load_test.jmx"
     }
