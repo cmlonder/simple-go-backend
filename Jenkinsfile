@@ -17,7 +17,7 @@ node {
     }
 
     stage('get config file') {
-        wget "https://raw.githubusercontent.com/Blazemeter/taurus/master/examples/jmeter/stepping.yml"
+        sh "wget https://raw.githubusercontent.com/Blazemeter/taurus/master/examples/jmeter/stepping.yml"
     }
 
     stage("run test") {
