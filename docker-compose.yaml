@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  backend:
+    image: hello-backend
+    container_name: backend
+    ports:
+      - '8000:8000'
+      - '6060:6060'
+  krakend:
+    image: devopsfaith/krakend
+    container_name: krakend
+    volumes:
+      - 'D:\krakend:/etc/krakend'
+    ports:
+      - '8002:8002'
+    depends_on:
+      - backend
