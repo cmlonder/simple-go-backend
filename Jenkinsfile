@@ -12,12 +12,8 @@ node {
         sh 'docker-compose up -d'
     }
 
-    stage('get config file') {
-        sh "wget https://raw.githubusercontent.com/Blazemeter/taurus/master/examples/jmeter/stepping.yml"
-    }
-
     stage("run test") {
-        bzt "stepping.yml"
+        bzt "load_test.jmx"
     }
 
     stage('Stop testing environment') {
